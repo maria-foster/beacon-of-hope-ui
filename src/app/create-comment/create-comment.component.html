@@ -1,0 +1,9 @@
+<mat-card class="card">
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Leave a comment</mat-label>
+          <textarea [formControl]="comment" matInput placeholder="Comment here"></textarea>
+        </mat-form-field>
+      </form>
+      <button (click)="postComment()" class="postComment" mat-button>Post Comment</button>
+</mat-card>
