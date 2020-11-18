@@ -1,2 +1,8 @@
+<mat-card class="header" style="width:100%;">
+        <mat-card-title> /{{ category }} </mat-card-title>
+</mat-card>
 <app-create-post></app-create-post>
-<app-thread></app-thread>
+<app-filters></app-filters>
+<div class="container" *ngFor="let post of posts" >
+<app-thread [thread]="post" ></app-thread>
+</div>

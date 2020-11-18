@@ -6,8 +6,22 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<app-menu></app-menu>
-<router-outlet></router-outlet>
+    <!-- <div class="header">
+            <mat-form-field class="languageSelector" appearance="fill">
+              <mat-label>select a language</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let language of languages" [value]="language" >
+                  {{language}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+    </div> -->
+    <div class="sidenav">
+        <app-menu></app-menu>
+    </div>
+    <div class="content" >
+        <router-outlet></router-outlet>
+    </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
@@ -16,5 +30,3 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-

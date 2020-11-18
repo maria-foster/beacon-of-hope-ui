@@ -11,7 +11,7 @@ import { User } from '../shared/models/user';
 export class CreatePostComponent implements OnInit {
   title = new FormControl("");
   content = new FormControl("");
-
+  expanded= "expand_more"
   thread : Thread;
   user: User;
   constructor() { }
@@ -32,5 +32,13 @@ export class CreatePostComponent implements OnInit {
       "user" : this.user
     }
     console.log(this.thread)
+  }
+  flip(){
+    if(this.expanded == "expand_more"){
+      this.expanded = "expand_less";
+    }
+    else{
+      this.expanded = "expand_more"
+    }
   }
 }
