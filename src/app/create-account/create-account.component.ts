@@ -22,22 +22,22 @@ export class CreateAccountComponent implements OnInit {
   ngOnInit() {
   }
 
-  createAccount() {
-   this.user  =  {
-    "firstName": this.fName.value,
-    "lastName": this.lName.value,
-    "email": this.email.value, 
-    "password": this.pass.value, 
-    "phoneNumber": this.num.value,
-    "age": this.age.value,
-    "zipcode": this.zip.value,
-    "_id": "",
-    "username": this.username.value
+  // createAccount() {
+  //  this.user  =  {
+  //   "firstName": this.fName.value,
+  //   "lastName": this.lName.value,
+  //   "email": this.email.value, 
+  //   "password": this.pass.value, 
+  //   "phoneNumber": this.num.value,
+  //   "age": this.age.value,
+  //   "zipcode": this.zip.value,
+  //   "_id": "",
+  //   "username": this.username.value
 
-    }
-    console.log(this.user)
-    this.apiService.createNewUser(this.user).subscribe((data) => {
-      console.log(data)
-    })
-  }
+  //   }
+  //   console.log(this.user)
+  //   this.apiService.createNewUser(this.user).subscribe((data) => {
+  //     console.log(data)
+  //   })
+  // }
 }
