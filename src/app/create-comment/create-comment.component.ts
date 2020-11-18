@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 
 import { User } from '../shared/models/user';
 import { Comment } from '../shared/models/comment';
@@ -13,7 +13,7 @@ import { UserService } from '../shared/services/user.service';
   styleUrls: ['./create-comment.component.css']
 })
 export class CreateCommentComponent implements OnInit {
-  comment = new FormControl("")
+  comment = new FormControl("", Validators.required)
   user : User
   commentObj : Comment
 

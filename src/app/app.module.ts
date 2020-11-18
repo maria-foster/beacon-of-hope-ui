@@ -26,6 +26,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
 import { SharedModule } from './shared/shared.module';
+import { HomeComponent } from './home/home.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
+import { LoginComponent } from './login/login.component';
+import { ChatBotComponent } from './chat-bot/chat-bot.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { SharedModule } from './shared/shared.module';
     CategoryPageComponent,
     FiltersComponent,
     CreatePostComponent,
-    CreateCommentComponent
+    CreateCommentComponent,
+    HomeComponent,
+    CreateAccountComponent,
+    LoginComponent,
+    ChatBotComponent
   ],
   imports: [
     BrowserModule,

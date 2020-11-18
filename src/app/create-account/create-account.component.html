@@ -1,0 +1,41 @@
+<mat-card>
+    <mat-card-title> Create an Account</mat-card-title>
+    <mat-card-subtitle> Powered by Beacon and United Way 211</mat-card-subtitle>
+    <mat-card-content>
+        <form class="example-form">
+            <mat-form-field  class=" example-full-width">
+                <mat-label>Username: </mat-label>
+                <input [formControl]="username" matInput placeholder=" test123">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>First Name: </mat-label>
+                <input [formControl]="fName" matInput placeholder="First Name">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Last Name:</mat-label>
+                <input [formControl]="lName" matInput placeholder="Last Name">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Email: </mat-label>
+                <input [formControl]="email" matInput placeholder="test@gmail.com">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Password:</mat-label>
+                <input [formControl]="pass" type="password" matInput placeholder="*****">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Phone Number: </mat-label>
+                <input [formControl]="num" matInput placeholder="123-456-7890">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Age:</mat-label>
+                <input [formControl]="age" matInput placeholder="18">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Zipcode:</mat-label>
+                <input [formControl]="zip" matInput placeholder="12345">
+            </mat-form-field>
+            <button mat-button (click)="createAccount()">Create Account</button>
+        </form>
+    </mat-card-content>
+</mat-card>

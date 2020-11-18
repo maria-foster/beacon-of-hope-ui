@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 import { Thread } from '../shared/models/post';
 import { User } from '../shared/models/user';
 import { ThreadService } from '../shared/services/thread.service';
@@ -12,8 +12,8 @@ import { ThreadService } from '../shared/services/thread.service';
 export class CreatePostComponent implements OnInit {
   @Input () category : string
   user: User;
-  title = new FormControl("");
-  content = new FormControl("");
+  title = new FormControl("", Validators.required);
+  content = new FormControl("", Validators.required);
   expanded= "expand_more"
   thread : Thread;
   
