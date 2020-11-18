@@ -6,7 +6,7 @@ export interface Thread {
     title: string,
     likes: number,
     dislikes: number,
-    user: User,
+    user: string,
     comments: Array<Comment>,
     flagged: boolean,
     category: string

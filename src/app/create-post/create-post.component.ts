@@ -33,7 +33,7 @@ export class CreatePostComponent implements OnInit {
       "flagged" : false,
       "likes" : 0,
       "title" : this.title.value,
-      "user" : this.user
+      "user" : this.user._id
     }
     console.log(this.thread)
     this.apiService.createNewThread(this.thread).subscribe((data) => {

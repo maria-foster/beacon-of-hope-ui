@@ -5,6 +5,7 @@ import { User } from '../shared/models/user';
 import { Comment } from '../shared/models/comment';
 import { Thread } from '../shared/models/post';
 import { ThreadService } from '../shared/services/thread.service';
+import { UserService } from '../shared/services/user.service';
 
 @Component({
   selector: 'app-create-comment',
@@ -20,15 +21,15 @@ export class CreateCommentComponent implements OnInit {
   constructor( private apiService: ThreadService) { }
 
   ngOnInit() {
+
   }
 
   postComment(){
     this.commentObj = {
-      "user" : this.user,
+      "user" : this.user._id,
       "content" : this.comment.value,
       "likes": 0,
       "dislikes": 0,
-      "comments": [],
       "flagged": false
     }
     this.thread.comments.push(this.commentObj)
