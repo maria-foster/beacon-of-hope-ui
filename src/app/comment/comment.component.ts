@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Comment } from '../shared/models/comment'
+import { Thread } from '../shared/models/post';
 
 @Component({
   selector: 'app-comment',
@@ -8,9 +9,9 @@ import { Comment } from '../shared/models/comment'
 })
 export class CommentComponent implements OnInit {
   @Input () comment : Comment
+  @Input () thread : Thread 
   username = this.comment.user.username
   content = this.comment.content
-  comments = this.comment.comments
   totalLikes = this.comment.likes = this.comment.dislikes
   
   constructor() { }

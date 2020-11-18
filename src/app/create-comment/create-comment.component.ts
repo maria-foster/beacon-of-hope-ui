@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 import { User } from '../shared/models/user';
 import { Comment } from '../shared/models/comment';
+import { Thread } from '../shared/models/post';
+import { ThreadService } from '../shared/services/thread.service';
 
 @Component({
   selector: 'app-create-comment',
@@ -14,7 +16,8 @@ export class CreateCommentComponent implements OnInit {
   user : User
   commentObj : Comment
 
-  constructor() { }
+  @Input () thread : Thread 
+  constructor( private apiService: ThreadService) { }
 
   ngOnInit() {
   }
@@ -28,7 +31,10 @@ export class CreateCommentComponent implements OnInit {
       "comments": [],
       "flagged": false
     }
-
+    this.thread.comments.push(this.commentObj)
+    this.apiService.updateThread(this.thread._id, this.thread).subscribe((data) => {
+      console.log(data)
+    })
     console.log(this.commentObj)
   }
 }

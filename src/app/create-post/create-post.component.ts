@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Thread } from '../shared/models/post';
 import { User } from '../shared/models/user';
+import { ThreadService } from '../shared/services/thread.service';
 
 @Component({
   selector: 'app-create-post',
@@ -14,7 +15,7 @@ export class CreatePostComponent implements OnInit {
   expanded= "expand_more"
   thread : Thread;
   user: User;
-  constructor() { }
+  constructor( private apiService: ThreadService) { }
 
   ngOnInit() {
   }
@@ -32,6 +33,9 @@ export class CreatePostComponent implements OnInit {
       "user" : this.user
     }
     console.log(this.thread)
+    this.apiService.createNewThread(this.thread).subscribe((data) => {
+      console.log(data)
+    })
   }
   flip(){
     if(this.expanded == "expand_more"){

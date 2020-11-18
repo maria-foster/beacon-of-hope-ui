@@ -22,4 +22,5 @@
     <mat-card-footer *ngFor="let comment of comments">
         <app-comment [comment]="comment"></app-comment>
     </mat-card-footer>
+        <app-create-comment [thread]="thread"></app-create-comment>
   </mat-card>
