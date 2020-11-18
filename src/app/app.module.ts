@@ -30,6 +30,7 @@ import { HomeComponent } from './home/home.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { LoginComponent } from './login/login.component';
 import { ChatBotComponent } from './chat-bot/chat-bot.component';
+import { HttpClientModule} from '@angular/common/http'; 
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { ChatBotComponent } from './chat-bot/chat-bot.component';
     MatExpansionModule,
     MatCheckboxModule,
     MatSelectModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
