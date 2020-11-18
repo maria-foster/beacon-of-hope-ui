@@ -11,8 +11,7 @@ import { ThreadService } from '../shared/services/thread.service';
 export class CategoryPageComponent implements OnInit {
   posts : [Thread]
   category : String
-  constructor(private route: ActivatedRoute,
-    @Inject(ThreadService) apiService: ThreadService) { }
+  constructor(private route: ActivatedRoute) { } //@Inject(ThreadService) apiService: ThreadService
 
   ngOnInit() {
     // this.route.paramMap.subscribe(params => {
