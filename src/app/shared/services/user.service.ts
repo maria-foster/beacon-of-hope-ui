@@ -6,7 +6,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserService {
-  url = "http://localhost:5500/api/v1/users"
+  url = "http://remote-rookies-api.eastus2.cloudapp.azure.com:5500/api/v1/users"
 
   constructor(private http: HttpClient) {}
   httpOptions = {
@@ -26,8 +26,10 @@ export class UserService {
  getUser(id) : any {
    return this.http.get<User>(this.url +  "/" + id, this.httpOptions);
  }
-
- updateInterviews(id, data) : any {
-   return this.http.put<User>(this.url +  + "update/interviews/" + id, data, this.httpOptions);
- }
+ getUserByZipcode(zipcode) : any {
+  return this.http.get<[User]>(this.url +  "/findByZipCode/" + zipcode, this.httpOptions);
+}
+getUserByAge(age) : any {
+  return this.http.get<[User]>(this.url +  "/findByAge/" + age, this.httpOptions);
+}
 }

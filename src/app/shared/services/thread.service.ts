@@ -7,7 +7,7 @@ import { Thread } from '../models/post';
 })
 export class ThreadService {
 
-  url = "http://localhost:5500/api/v1/threads"
+  url = "http://remote-rookies-api.eastus2.cloudapp.azure.com:5500/api/v1/threads"
 
   constructor(private http: HttpClient) {}
   httpOptions = {
@@ -34,11 +34,8 @@ export class ThreadService {
  getThreadsByCategory(category) : any {
   return this.http.get<[Thread]>(this.url +  "/findByCategory/" + category, this.httpOptions);
 }
-getThreadByZipcode(zipcode) : any {
-  return this.http.get<[Thread]>(this.url +  "/findByZipCode/" + zipcode, this.httpOptions);
-}
-getThreadByAge(age) : any {
-  return this.http.get<[Thread]>(this.url +  "/findByAge/" + age, this.httpOptions);
+getThreadsByUser(id) : any {
+  return this.http.get<[Thread]>(this.url +  "/findByUser/" + id, this.httpOptions);
 }
 
 }
