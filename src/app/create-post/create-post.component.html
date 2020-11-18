@@ -1,8 +1,11 @@
-<mat-card class="card">
-    <mat-card-header>
-        <mat-card-title>Create a Post </mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
+<mat-expansion-panel hideToggle class="card">
+        <mat-expansion-panel-header (click)="flip()">
+        <mat-panel-title >Create a Post . . .  </mat-panel-title>
+        <span class="material-icons">
+                {{ expanded }}
+                </span>
+        </mat-expansion-panel-header>
+    <mat-panel-description>
         <form class="example-form">
             <mat-form-field class="example-full-width">
                 <mat-label>Title</mat-label>
@@ -13,6 +16,6 @@
                 <textarea [formControl]="content" rows="10" matInput placeholder="Description here ..."></textarea>
             </mat-form-field>
         </form>
-    </mat-card-content>
-    <button (click)="postThread()" class="postComment" mat-button>Create New Post!</button>
-</mat-card>
+    </mat-panel-description>
+    <button (click)="postThread()" class="postComment" mat-button>Post</button>
+</mat-expansion-panel>

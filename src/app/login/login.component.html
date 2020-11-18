@@ -1,0 +1,17 @@
+<mat-card>
+        <mat-card-title> Login </mat-card-title> 
+        <mat-card-subtitle> Powered by Beacon and United Way 211</mat-card-subtitle>
+        <mat-card-content>
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+        <mat-label>Username: </mat-label>
+        <input [formControl]="username" matInput placeholder="test@gmail.com">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Password:</mat-label>
+        <input [formControl]="password" type="password" matInput placeholder="******">
+    </mat-form-field>
+    <button (click)="login()" mat-button>Login</button>
+</form>
+        </mat-card-content>
+        </mat-card>

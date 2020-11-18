@@ -1,10 +1,9 @@
 import { User } from './user';
 
 export interface Comment {
-    user: User,
+    user: string,
     content: string, 
     likes: number,
     dislikes: number,
-    comments: Array<Comment>,
     flagged: Boolean
 }

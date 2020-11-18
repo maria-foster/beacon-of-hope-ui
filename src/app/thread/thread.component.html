@@ -1,23 +1,26 @@
 <mat-card class="card">
         <mat-card-actions class="buttonCounters">
-                    {{ totalLikes}} likes
+          <div class="buttonContainer">
+                    <label>{{ totalLikes}} {{ likesString }}</label>
                     <button (click)="increment()" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
                         <mat-icon>thumb_up</mat-icon>
                       </button>
                       <button (click)="decrement()" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
                             <mat-icon>thumb_down</mat-icon>
                           </button>
+                        </div>
               </mat-card-actions>
     <mat-card-header>
-      <mat-card-title> {{ title }} </mat-card-title>
-      <mat-card-subtitle>{{ username }}</mat-card-subtitle>
+      <mat-card-title> {{ username }} </mat-card-title>
+      <mat-card-subtitle>{{ title }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <p>
         {{ content }}
       </p>
     </mat-card-content>
-    <mat-card-footer>
-        <app-comment></app-comment>
+    <mat-card-footer *ngFor="let comment of comments">
+        <app-comment [comment]="comment"></app-comment>
     </mat-card-footer>
+        <app-create-comment [thread]="thread"></app-create-comment>
   </mat-card>

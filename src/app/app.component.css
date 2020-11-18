@@ -1,0 +1,18 @@
+.content {
+    width: 83.33%;
+    float: left;
+}
+.sidenav{
+    width: 16.66%;
+    float: left;
+}
+.languageSelector{
+    float:right;
+}
+.header{
+    width:100%;
+}
+.logo{
+    float:left;
+}
+

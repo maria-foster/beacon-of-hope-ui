@@ -18,6 +18,19 @@ import {MatIconModule} from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatChipsModule, MatChip} from '@angular/material/chips';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSelectModule} from '@angular/material/select';
+import { SharedModule } from './shared/shared.module';
+import { HomeComponent } from './home/home.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
+import { LoginComponent } from './login/login.component';
+import { ChatBotComponent } from './chat-bot/chat-bot.component';
+import { HttpClientModule} from '@angular/common/http'; 
 
 @NgModule({
   declarations: [
@@ -28,7 +41,11 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     CategoryPageComponent,
     FiltersComponent,
     CreatePostComponent,
-    CreateCommentComponent
+    CreateCommentComponent,
+    HomeComponent,
+    CreateAccountComponent,
+    LoginComponent,
+    ChatBotComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +57,16 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatIconModule,
     FormsModule,
     ReactiveFormsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatMenuModule,
+    MatGridListModule,
+    MatDividerModule,
+    MatChipsModule,
+    MatExpansionModule,
+    MatCheckboxModule,
+    MatSelectModule,
+    SharedModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
