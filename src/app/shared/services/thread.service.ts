@@ -32,13 +32,13 @@ export class ThreadService {
   return this.http.get<[Thread]>(this.url, this.httpOptions);
 }
  getThreadsByCategory(category) : any {
-  return this.http.get<[Thread]>(this.url +  "/findByCategory" + category, this.httpOptions);
+  return this.http.get<[Thread]>(this.url +  "/findByCategory/" + category, this.httpOptions);
 }
 getThreadByZipcode(zipcode) : any {
-  return this.http.get<[Thread]>(this.url +  "/findByZipCode" + zipcode, this.httpOptions);
+  return this.http.get<[Thread]>(this.url +  "/findByZipCode/" + zipcode, this.httpOptions);
 }
 getThreadByAge(age) : any {
-  return this.http.get<[Thread]>(this.url +  "/findByAge" + age, this.httpOptions);
+  return this.http.get<[Thread]>(this.url +  "/findByAge/" + age, this.httpOptions);
 }
 
 }

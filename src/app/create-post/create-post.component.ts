@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Thread } from '../shared/models/post';
 import { User } from '../shared/models/user';
@@ -10,11 +10,14 @@ import { ThreadService } from '../shared/services/thread.service';
   styleUrls: ['./create-post.component.css']
 })
 export class CreatePostComponent implements OnInit {
+  @Input () category : string
+  user: User;
   title = new FormControl("");
   content = new FormControl("");
   expanded= "expand_more"
   thread : Thread;
-  user: User;
+  
+  
   constructor( private apiService: ThreadService) { }
 
   ngOnInit() {
@@ -23,7 +26,7 @@ export class CreatePostComponent implements OnInit {
   postThread(){
     this.thread = {
       "_id" : "",
-      "category" : "Test",
+      "category" : this.category,
       "comments" : [],
       "content" : this.content.value,
       "dislikes" : 0,
