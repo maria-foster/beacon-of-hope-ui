@@ -25,6 +25,7 @@ import {MatChipsModule, MatChip} from '@angular/material/chips';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatChipsModule,
     MatExpansionModule,
     MatCheckboxModule,
-    MatSelectModule
+    MatSelectModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
