@@ -6,6 +6,7 @@ import { Comment } from '../shared/models/comment';
 import { Thread } from '../shared/models/post';
 import { ThreadService } from '../shared/services/thread.service';
 import { UserService } from '../shared/services/user.service';
+import { TranslateService } from '../shared/services/translate.service';
 
 @Component({
   selector: 'app-create-comment',
@@ -16,17 +17,21 @@ export class CreateCommentComponent implements OnInit {
   comment = new FormControl("", Validators.required)
   user : User
   commentObj : Comment
-
+  userID
   @Input () thread : Thread 
-  constructor( private apiService: ThreadService) { }
+  constructor( private apiService: ThreadService,
+    private apiService2 : TranslateService) { }
 
   ngOnInit() {
 
   }
 
   postComment(){
+    this.userID = this.apiService2.getCookie("beacon_login")
+    console.log(this.userID)
+    if(this.userID != ""){
     this.commentObj = {
-      "user" : this.user._id,
+      "user" : this.userID,
       "content" : this.comment.value,
       "likes": 0,
       "dislikes": 0,
@@ -37,5 +42,9 @@ export class CreateCommentComponent implements OnInit {
       console.log(data)
     })
     console.log(this.commentObj)
+  }
+  else{
+    alert("You must be logged in to create a new post! ")
+  }
   }
 }
