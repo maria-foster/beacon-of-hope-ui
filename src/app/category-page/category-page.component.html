@@ -2,7 +2,7 @@
         <mat-card-title> /{{ category }} </mat-card-title>
 </mat-card>
 <app-create-post [category]="category"></app-create-post>
-<app-filters></app-filters>
+<app-filters (zipcodeEvent)="filterZipcode($event)" (agesEvent)="filterAge($event)" (genderEvent)="filterGender($event)" ></app-filters>
 <div class="container" *ngFor="let post of posts" >
 <app-thread [thread]="post" ></app-thread>
 </div>

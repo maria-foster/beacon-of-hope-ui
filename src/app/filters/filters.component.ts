@@ -15,7 +15,8 @@ export class FiltersComponent implements OnInit {
   
   @Output() zipcodeEvent: EventEmitter<any> = new EventEmitter<any>();
   @Output() agesEvent: EventEmitter<any> = new EventEmitter<any>();
-  
+  @Output() genderEvent: EventEmitter<any> = new EventEmitter<any>();
+
   zipcode = new FormControl("")
   
 
@@ -44,6 +45,17 @@ export class FiltersComponent implements OnInit {
   }
   sortByAge6(){
     this.agesEvent.emit([65])
+  }
+  sortByMale(){
+    this.genderEvent.emit("male")
+  }
+  
+  sortByFemale(){
+    this.genderEvent.emit("female")
+  }
+
+  sortByOther(){
+    this.genderEvent.emit("other")
   }
   }
   

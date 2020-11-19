@@ -13,3 +13,10 @@
 <mat-menu #zipcodeFilter="matMenu">
     <input type="text" [formControl]="zipcode" mat-menu-item (click)="sortByZipcode()"> 
 </mat-menu>
+
+<button class="filter" mat-button [matMenuTriggerFor]="genderFilter">Gender</button>
+<mat-menu #genderFilter="matMenu">
+    <button (click)="sortByMale()" mat-menu-item>Male</button>
+    <button (click)="sortByFemale()" mat-menu-item>Female</button>
+    <button (click)="sortByOther()" mat-menu-item>Other</button>
+</mat-menu>

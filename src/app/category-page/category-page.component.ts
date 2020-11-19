@@ -26,4 +26,16 @@ export class CategoryPageComponent implements OnInit {
     });
   }
 
+  public filterZipcode(zipcode: any):void {
+    console.log('Picked zipcode: ', zipcode);
+  }
+
+public filterAge(ages: any):void {
+  console.log('Picked ages: ', ages);
+}
+
+public filterGender(gender: any):void {
+  console.log('Picked gender: ', gender);
+}
+
 }
