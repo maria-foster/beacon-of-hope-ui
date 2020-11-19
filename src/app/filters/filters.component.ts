@@ -11,7 +11,7 @@ import { FormControl } from '@angular/forms';
 
 export class FiltersComponent implements OnInit {
   zipcodeString = "Zipcode"
-  ageString = "age"
+  ageString = "Age"
   
   @Output() zipcodeEvent: EventEmitter<any> = new EventEmitter<any>();
   @Output() agesEvent: EventEmitter<any> = new EventEmitter<any>();

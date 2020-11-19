@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Thread } from '../shared/models/post';
+import { ThreadService } from '../shared/services/thread.service';
 import { UserService } from '../shared/services/user.service';
 
 @Component({
@@ -18,7 +19,10 @@ export class ThreadComponent implements OnInit {
   dislikes
   totalLikes
  
-  constructor(private apiService : UserService) { }
+  constructor(
+    private apiService : UserService,
+    private apiService2: ThreadService
+    ) { }
 
   ngOnInit() {
     this.apiService.getUser(this.thread.user).subscribe((data) => {
@@ -34,10 +38,19 @@ export class ThreadComponent implements OnInit {
 
   increment(){
     this.likes++;
+    this.thread.likes = this.likes;
     this.totalLikes = this.likes - this.dislikes;
+    this.apiService2.updateThread(this.thread._id, this.thread).subscribe((data) => { 
+      console.log(data)
+    })
+    
   }
   decrement(){
     this.dislikes++;
+    this.thread.dislikes = this.dislikes
     this.totalLikes = this.likes - this.dislikes;
+    this.apiService2.updateThread(this.thread._id, this.thread).subscribe((data) => { 
+      console.log(data)
+    })
   }
 }

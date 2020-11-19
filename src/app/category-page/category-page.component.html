@@ -1,5 +1,11 @@
 <mat-card class="header" style="width:100%;">
         <mat-card-title> /{{ category }} </mat-card-title>
+        <mat-card-content> 
+               <p>Welcome to the United Way 211 Beacon Community page for {{ category }} assistance. <br>
+                This space is for those in SW PA who are already working with United Way of SW PA 
+                or considering working with United Way to interact virtually. <br> Content will be reviewed periodically by UW. 
+                To talk to a representative dial 2-1-1 or connect with us <a href="http://pa211sw.org">here.</a></p> 
+        </mat-card-content>
 </mat-card>
 <app-create-post [category]="category"></app-create-post>
 <app-filters (zipcodeEvent)="filterZipcode($event)" (agesEvent)="filterAge($event)" (genderEvent)="filterGender($event)" ></app-filters>

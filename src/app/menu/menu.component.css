@@ -10,3 +10,12 @@
   width:100%;
 }
 
+@media only screen and (max-width: 1064px) {
+  .button{
+    display:block;
+    width:100%;
+    padding:.5%;
+    text-align:left;
+    text-align: center;
+  }
+}

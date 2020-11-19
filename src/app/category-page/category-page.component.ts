@@ -12,8 +12,8 @@ export class CategoryPageComponent implements OnInit {
   posts : [Thread]
   category : String
   constructor(private route: ActivatedRoute,
-    private apiService: ThreadService) { } //@Inject(ThreadService) apiService: ThreadService
-
+    private apiService: ThreadService) { } 
+    
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.category = params.get("category");
