@@ -1,1 +1,20 @@
-<p>chat-bot works!</p>
+<body>
+
+    <h1>My First Heading</h1>
+    <p>My first paragraph.</p>
+    
+    <script>
+      window.watsonAssistantChatOptions = {
+          integrationID: "4e54cd19-756d-436f-a94b-c63d54ff98d3", // The ID of this integration.
+          region: "us-south", // The region your integration is hosted in.
+          serviceInstanceID: "b41622e1-8511-4076-be9c-0f76647053e7", // The ID of your service instance.
+          onLoad: function(instance) { instance.render(); }
+        };
+      setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+        document.head.appendChild(t);
+      });
+    </script>
+    
+</body>
