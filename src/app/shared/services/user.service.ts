@@ -32,4 +32,9 @@ export class UserService {
 getUserByAge(age) : any {
   return this.http.get<[User]>(this.url +  "/findByAge/" + age, this.httpOptions);
 }
+
+login(userName, password) : any {
+  return this.http.get<[User]>(this.url +  "/login/" + userName + "/" + password, this.httpOptions);
+}
+
 }
