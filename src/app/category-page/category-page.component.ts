@@ -11,17 +11,19 @@ import { ThreadService } from '../shared/services/thread.service';
 export class CategoryPageComponent implements OnInit {
   posts : [Thread]
   category : String
-  constructor(private route: ActivatedRoute) { } //@Inject(ThreadService) apiService: ThreadService
+  constructor(private route: ActivatedRoute,
+    private apiService: ThreadService) { } //@Inject(ThreadService) apiService: ThreadService
 
   ngOnInit() {
-    // this.route.paramMap.subscribe(params => {
-    //   this.category = params.get("category");
-    //   if( this.category != null ){
-    //     this.apiService.getThreadsByCategory(this.category).subscribe((data) => {
-    //       this.posts = data
-    //     })
-    //   }
-    //});
+    this.route.paramMap.subscribe(params => {
+      this.category = params.get("category");
+      if( this.category != null ){
+        this.apiService.getThreadsByCategory(this.category).subscribe((data) => {
+          console.log(data)
+          this.posts = data
+        })
+      }
+    });
   }
 
 }

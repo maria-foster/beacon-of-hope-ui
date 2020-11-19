@@ -11,12 +11,12 @@ export class ThreadComponent implements OnInit {
   @Input () thread: Thread
   likesString = "likes"
   username
-  title = this.thread.title
-  content = this.thread.content
-  comments = this.thread.comments
-  likes = this.thread.likes
-  dislikes = this.thread.dislikes
-  totalLikes = this.likes - this.dislikes;
+  title
+  content 
+  comments 
+  likes
+  dislikes
+  totalLikes
  
   constructor(private apiService : UserService) { }
 
@@ -24,6 +24,12 @@ export class ThreadComponent implements OnInit {
     this.apiService.getUser(this.thread.user).subscribe((data) => {
       this.username = data.username
     })
+    this.title = this.thread.title
+    this.content = this.thread.content
+    this.comments = this.thread.comments
+    this.likes = this.thread.likes
+    this.dislikes = this.thread.dislikes
+    this.totalLikes = this.likes - this.dislikes;
   }
 
   increment(){

@@ -5,7 +5,7 @@ export interface User {
     password: string, 
     phoneNumber: string,
     age: number,
-    zipcode: number,
+    zipCode: number,
     _id: string,
     username: string
     

@@ -1,15 +1,15 @@
 <label>Filters: </label>
 <button class="filter" mat-button [matMenuTriggerFor]="ageFilter">{{ageString }}</button>
 <mat-menu #ageFilter="matMenu">
-    <button mat-menu-item>18-24</button>
-    <button mat-menu-item>25-34</button>
-    <button mat-menu-item>35-44</button>
-    <button mat-menu-item>45-54</button>
-    <button mat-menu-item>55-64</button>
-    <button mat-menu-item>65+</button>
+    <button (click)="sortByAge1()" mat-menu-item>18-24</button>
+    <button (click)="sortByAge2()" mat-menu-item>25-34</button>
+    <button (click)="sortByAge3()" mat-menu-item>35-44</button>
+    <button (click)="sortByAge4()" mat-menu-item>45-54</button>
+    <button (click)="sortByAge5()" mat-menu-item>55-64</button>
+    <button (click)="sortByAge6()" mat-menu-item>65+</button>
 
 </mat-menu>
 <button class="filter" mat-button [matMenuTriggerFor]="zipcodeFilter">{{ zipcodeString}}</button>
 <mat-menu #zipcodeFilter="matMenu">
-    <input type="text" mat-menu-item> 
+    <input type="text" [formControl]="zipcode" mat-menu-item (click)="sortByZipcode()"> 
 </mat-menu>

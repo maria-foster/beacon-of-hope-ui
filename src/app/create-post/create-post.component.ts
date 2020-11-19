@@ -17,7 +17,6 @@ export class CreatePostComponent implements OnInit {
   expanded= "expand_more"
   thread : Thread;
   
-  
   constructor( private apiService: ThreadService) { }
 
   ngOnInit() {
