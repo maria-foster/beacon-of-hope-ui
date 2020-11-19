@@ -15,7 +15,7 @@ export class CreatePostComponent implements OnInit {
   title = new FormControl("", Validators.required);
   content = new FormControl("", Validators.required);
   expanded= "expand_more"
-  thread : Thread;
+  thread 
   
   constructor( private apiService: ThreadService) { }
 
@@ -24,7 +24,6 @@ export class CreatePostComponent implements OnInit {
 
   postThread(){
     this.thread = {
-      "_id" : "",
       "category" : this.category,
       "comments" : [],
       "content" : this.content.value,
@@ -32,7 +31,8 @@ export class CreatePostComponent implements OnInit {
       "flagged" : false,
       "likes" : 0,
       "title" : this.title.value,
-      "user" : this.user._id
+      "date" : String(new Date()),
+      "user" : "TEST"
     }
     console.log(this.thread)
     this.apiService.createNewThread(this.thread).subscribe((data) => {

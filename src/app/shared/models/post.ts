@@ -9,5 +9,6 @@ export interface Thread {
     user: string,
     comments: Array<Comment>,
     flagged: boolean,
-    category: string
+    category: string,
+    date: string
 }

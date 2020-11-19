@@ -16,7 +16,9 @@ export class CreateAccountComponent implements OnInit {
   age = new FormControl("", Validators.required)
   zip = new FormControl("", Validators.required)
   username = new FormControl("", Validators.required)
-  user : User
+  gender  = new FormControl("", Validators.required)
+
+  user 
   constructor(private apiService: UserService) { }
 
   ngOnInit() {
@@ -31,9 +33,8 @@ export class CreateAccountComponent implements OnInit {
     "phoneNumber":this.num.value,
     "age": parseInt(this.age.value),
     "zipCode": parseInt(this.zip.value),
-    "_id": "",
-    "username": this.username.value
-
+    "username": this.username.value,
+    "gender" : this.gender.value
     }
     console.log(this.user)
     this.apiService.createNewUser(this.user).subscribe((data) => {
