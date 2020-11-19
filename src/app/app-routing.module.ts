@@ -13,6 +13,10 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'login', component: LoginComponent},
   { path: 'sign-up', component: CreateAccountComponent},
+  { path: 'sign-up/forum', redirectTo: "forum/housing"},
+  { path: 'sign-up/login', redirectTo: "login"},
+  { path: 'login/forum', redirectTo: "forum/housing"},
+  { path: 'login/sign-up', redirectTo: "sign-up"},
   { path: 'forum/:category', component: CategoryPageComponent },
   { path: 'menu', component: MenuComponent},
   { path: 'chat-bot', component: ChatBotComponent}

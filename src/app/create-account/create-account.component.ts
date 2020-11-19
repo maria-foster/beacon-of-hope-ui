@@ -39,6 +39,10 @@ export class CreateAccountComponent implements OnInit {
     console.log(this.user)
     this.apiService.createNewUser(this.user).subscribe((data) => {
       console.log(data)
+      var d = new Date();
+        d.setTime(d.getTime() + (1*24*60*60*1000));
+        var expires = "expires="+ d.toUTCString();
+        document.cookie = "beacon_login" + "=" + data._id+ ";" + expires + ";path=/";
     })
   }
 }

@@ -26,6 +26,10 @@ export class UserService {
  getUser(id) : any {
    return this.http.get<User>(this.url +  "/" + id, this.httpOptions);
  }
+
+ login(username, password) : any {
+  return this.http.get<User>(this.url +  "/login/" + username + "/" + password, this.httpOptions);
+}
  getUserByZipcode(zipcode) : any {
   return this.http.get<[User]>(this.url +  "/findByZipCode/" + zipcode, this.httpOptions);
 }
