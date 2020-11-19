@@ -7,12 +7,20 @@
 .logout{ 
     float: left;
 }
-
+.logoDiv {
+    align-content: center;
+    width:50%;
+    float: left;
+}
+.buttonDiv{
+    width:50%;
+    float: left;
+}
 .logo{
     widows: 1000px;
-    height: 100px;
+    height: 80px;
     position: center;
 }
-div{
-    float:middle;
+img:focus {
+    outline: none;
 }

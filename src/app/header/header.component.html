@@ -1,17 +1,20 @@
-<p>
-    <mat-toolbar>
+
+<p height="height:5%;position:fixed;">
+    <mat-toolbar style="background-color:#ffffff; padding-top:1.5%; padding-bottom:1.5%">
       <span class="header" *ngIf="loggedIn"> 
           <button class="logout" (click)="logOut()" mat-button>Logout</button>
           <div>
-            <img class="logo" src="assets/img/beaconLogo.png" alt="Beacon">
+            <img routerLink="chat-bot" class="logo" src="assets/img/beaconLogo.png" alt="Beacon">
           </div>
           Hello, {{ name }} </span>
       <span  class="header" *ngIf="!loggedIn"> 
-        <div>
-          <img class="logo" src="assets/img/beaconLogo.png" alt="Beacon">
+        <div class="logoDiv"  >
+          <img routerLink="chat-bot" class="logo" src="assets/img/beaconLogo.png" alt="Beacon">
         </div>
-        <button routerLink="login" mat-button>Login</button>
-        <button routerLink="sign-up" mat-button>Sign Up</button>
+        <div class="buttonDiv">
+        <button  routerLink="login" mat-button>Login</button>
+        <button style="padding-right:2%" routerLink="sign-up" mat-button>Sign Up</button>
+      </div>
       </span>
 
     </mat-toolbar>
