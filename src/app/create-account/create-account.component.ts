@@ -43,6 +43,7 @@ export class CreateAccountComponent implements OnInit {
         d.setTime(d.getTime() + (1*24*60*60*1000));
         var expires = "expires="+ d.toUTCString();
         document.cookie = "beacon_login" + "=" + data._id+ ";" + expires + ";path=/";
+        window.location.reload()
         alert("You have successfully created an account! ")
     })
   }
