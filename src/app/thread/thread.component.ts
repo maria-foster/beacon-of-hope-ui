@@ -19,6 +19,7 @@ export class ThreadComponent implements OnInit {
   likes
   dislikes
   totalLikes
+  date
  
   constructor(
     private apiService : UserService,
@@ -37,6 +38,7 @@ export class ThreadComponent implements OnInit {
     this.likes = this.thread.likes
     this.dislikes = this.thread.dislikes
     this.totalLikes = this.likes - this.dislikes;
+    this.date = this.thread.date
   }
 
   increment(){

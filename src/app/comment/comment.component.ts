@@ -11,18 +11,15 @@ import { UserService } from '../shared/services/user.service';
 export class CommentComponent implements OnInit {
   @Input () comment : Comment
   @Input () thread : Thread 
-  username
+
   content
-  totalLikes
+
   
   constructor(private apiService : UserService) { }
 
   ngOnInit() {
     this.content = this.comment.content
-    this.totalLikes = this.comment.likes = this.comment.dislikes
-    this.apiService.getUser(this.comment.user).subscribe((data) => {
-      this.username = data.username
-    })
+
   }
 
 }

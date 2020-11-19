@@ -8,8 +8,9 @@
   }
 
   .card {
-      width:90%;
+      width:95%;
       margin:2%;
+      margin-top:3%;
   }
 
   .postComment {
