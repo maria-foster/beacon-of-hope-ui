@@ -44,7 +44,7 @@ export class CreateCommentComponent implements OnInit {
     console.log(this.commentObj)
   }
   else{
-    alert("You must be logged in to create a new post! ")
+    alert("You must be logged in to post a new comment! ")
   }
   }
 }

@@ -11,24 +11,27 @@ export class LoginComponent implements OnInit {
   username = new FormControl("", Validators.required)
   password = new FormControl("", Validators.required)
 
-  constructor(private apiService : UserService) { }
+  constructor(private apiService: UserService) { }
 
   ngOnInit() {
   }
 
-  login(){
-      this.apiService.login(this.username.value, this.password.value).subscribe((data) => {
-        console.log(data)
-        if(data[0] != null ){
-          var d = new Date();
-        d.setTime(d.getTime() + (1*24*60*60*1000));
-        var expires = "expires="+ d.toUTCString();
-        document.cookie = "beacon_login" + "=" + data[0]._id+ ";" + expires + ";path=/";
-        window.location.reload()
+  login() {
+    this.apiService.login(this.username.value, this.password.value).subscribe((data) => {
+      console.log(data.length)
+      if (data.length != 0) {
+        var d = new Date();
+        d.setTime(d.getTime() + (1 * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = "beacon_login" + "=" + data[0]._id + ";" + expires + ";path=/";
+        window.location.href = window.location.href + "/forum"
         alert("You have successfully logged in!")
-        }
-      })
-      
-    
+      }
+      else{
+        alert("Your username or password was not correct.")
+      }
+    })
+
+
   }
 }
