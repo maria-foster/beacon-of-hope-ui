@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Thread } from '../shared/models/post';
 import { ThreadService } from '../shared/services/thread.service';
 import { UserService } from '../shared/services/user.service';
@@ -23,6 +23,7 @@ export class ThreadComponent implements OnInit {
     private apiService : UserService,
     private apiService2: ThreadService
     ) { }
+  
 
   ngOnInit() {
     this.apiService.getUser(this.thread.user).subscribe((data) => {
