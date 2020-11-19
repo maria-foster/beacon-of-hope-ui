@@ -1,8 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { timeStamp } from 'console';
-import { Thread } from '../shared/models/post';
-import { User } from '../shared/models/user';
 import { ThreadService } from '../shared/services/thread.service';
 import { TranslateService } from '../shared/services/translate.service';
 

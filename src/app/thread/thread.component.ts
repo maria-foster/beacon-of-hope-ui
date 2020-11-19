@@ -40,7 +40,7 @@ export class ThreadComponent implements OnInit {
   }
 
   increment(){
-    if(this.apiService3.getCookie("beacon_login") != null)
+    if(this.apiService3.getCookie("beacon_login") != "")
     {
       this.likes++;
       this.thread.likes = this.likes;
@@ -56,7 +56,7 @@ export class ThreadComponent implements OnInit {
     
   }
   decrement(){
-    if(this.apiService3.getCookie("beacon_login") != null)
+    if(this.apiService3.getCookie("beacon_login") != "")
     {
       this.dislikes++;
       this.thread.dislikes = this.dislikes

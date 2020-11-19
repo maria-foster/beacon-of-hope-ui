@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TranslateService } from './shared/services/translate.service';
+import { UserService } from './shared/services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +9,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'beaconOfHopeUI2';
+
   languages = [
     "Spanish",
     "Chinese",
@@ -25,4 +28,12 @@ export class AppComponent {
     "West African",
     "Greek"
   ]
+
+  logout(test : any){
+    window.location.reload()
+  }
+
+  login(test : any){
+    window.location.reload()
+  }
 }

@@ -30,7 +30,8 @@ import { HomeComponent } from './home/home.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { LoginComponent } from './login/login.component';
 import { ChatBotComponent } from './chat-bot/chat-bot.component';
-import { HttpClientModule} from '@angular/common/http'; 
+import { HttpClientModule} from '@angular/common/http';
+import { HeaderComponent } from './header/header.component'; 
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { HttpClientModule} from '@angular/common/http';
     HomeComponent,
     CreateAccountComponent,
     LoginComponent,
-    ChatBotComponent
+    ChatBotComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -71,4 +73,7 @@ import { HttpClientModule} from '@angular/common/http';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+  
+}

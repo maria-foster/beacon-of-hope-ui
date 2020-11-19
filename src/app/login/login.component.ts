@@ -24,10 +24,9 @@ export class LoginComponent implements OnInit {
         d.setTime(d.getTime() + (1*24*60*60*1000));
         var expires = "expires="+ d.toUTCString();
         document.cookie = "beacon_login" + "=" + data[0]._id+ ";" + expires + ";path=/";
+        window.location.reload
         alert("You have successfully logged in!")
-
         }
-        
       })
       
     
